@@ -1,0 +1,17 @@
+@media only screen and (max-width: 768px) {
+    .panier-items {
+        gap: 1.5rem;
+    }
+
+    .panier-item {
+        padding: 1.5rem;
+    }
+
+    .panier-title {
+        font-size: 2rem;
+    }
+
+    .total-section {
+        font-size: 1.2rem;
+    }
+}

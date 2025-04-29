@@ -1,0 +1,106 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  color: #000000;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: #661992;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 4rem;
+}
+
+nav a {
+  text-decoration: underline;
+  color: #000000;
+  font-weight: 1000;
+}
+
+/* Panier Page */
+.panier-container {
+    padding: 5%;
+    text-align: center;
+}
+
+.panier-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #661992;
+    font-weight: bold;
+}
+
+.panier-items {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.panier-item {
+    background: #f5f5f5;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.panier-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.panier-item p {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    color: #666;
+}
+
+.total-section {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.total-section .btn {
+    margin-top: 2rem;
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #ff6b6b;
+    transition: 0.3s;
+}
+
+.delete-btn:hover {
+    color: #ff0000;
+    transform: scale(1.2);
+}

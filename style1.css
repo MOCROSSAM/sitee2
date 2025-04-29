@@ -1,0 +1,302 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  color: #000000;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: #661992;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 4rem;
+}
+
+nav a {
+  text-decoration: underline;
+  color: #000000;
+  font-weight: 1000;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  padding: 5% 10%;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.hero-text {
+  width: 100%;
+  flex: 1;
+}
+
+.hero-image {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: #ff6b6b;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 1rem;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background: #ff5252;
+  transform: translateY(-3px);
+}
+
+/* Features */
+.features {
+  display: flex;
+  justify-content: space-around;
+  padding: 5% 10%;
+  text-align: center;
+  margin-bottom: -2rem;
+}
+
+.avant-title {
+  text-align: center;
+  display: block;
+  width: 100%;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 2rem;
+  animation: fadeInDown 1s ease-out;
+}
+
+.feature-card {
+  width: 50%;
+  padding: 2rem;
+  border-radius: 10px;
+  background: rgb(255, 255, 255);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: #333;
+  color: white;
+}
+
+.footer-links a {
+  color: #ddd;
+  margin: 0 1rem;
+  text-decoration: none;
+}
+
+/* Testimonials Section (Commentaires) */
+#testimonials {
+  padding: 5% 10%;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+#testimonials .avant-title {
+  margin-bottom: 3rem;
+}
+
+.swiper {
+  width: 80%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-wrapper {
+  display: flex;
+}
+
+.swiper-slide {
+  background: #ffffff;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.swiper-slide img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.swiper-slide h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.swiper-slide p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Swiper buttons style (Next/Prev) */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #661992;
+}
+
+@keyframes fadeInDown {
+  0% {
+      opacity: 0;
+      transform: translateY(-30px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Media Queries for Desktop */
+@media only screen and (min-width: 768px) {
+  /* Hero Section for desktop */
+  .hero {
+    flex-direction: row; /* Display horizontally */
+    justify-content: space-between; /* Space out the items */
+  }
+
+  .hero-text {
+    text-align: left;
+    flex: 1; /* Add flex to ensure the text area takes up space */
+    max-width: 50%;
+  }
+
+  .hero-image {
+    flex: 1;
+    text-align: center;
+  }
+
+  .features {
+    display: flex;
+    justify-content: space-between;
+    padding: 5% 10%;
+    text-align: center;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .feature-card {
+    width: 30%; /* Adjust width for multiple cards */
+    padding: 2rem;
+    border-radius: 10px;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+
+  .avant-title {
+    font-size: 2.5rem; /* Make title larger on desktop */
+    margin-bottom: 3rem;
+  }
+
+  /* Adjust testimonials slider layout */
+  #testimonials .swiper-wrapper {
+    flex-direction: row; /* Display swiper items in a row */
+  }
+
+  .swiper-slide {
+    width: 30%; /* Adjust swiper slide size */
+    margin-right: 2%;
+  }
+}  
+
+.hero-thumbnails {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.thumbnailSwiper {
+  width: 100%;
+}
+
+.thumbnailSwiper .swiper-slide img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.thumbnailSwiper .swiper-slide img:hover {
+  transform: scale(1.1);
+}
+
+/* Styling for thumbnails section */
+.produit-thumbnails {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 500px;
+  margin-bottom: 20px;
+}
+
+.produit-thumbnails .thumbnail {
+  width: 80px;  /* Size of small images */
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.produit-thumbnails .thumbnail:hover {
+  transform: scale(1.1);  /* Slight zoom on hover */
+}
+
+/* Main image styling */
+.produit-gallery img {
+  width: 100%;
+  max-width: 100px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.produit-thumbnails img {
+  width: 80px; /* Hna, t9der tzid l7ajm dyal image bach tkoun wahda m3a l'awla */
+  height: auto; /* Hadi katkhali l'image tabqa m3a nisba m3a l3ard */
+  cursor: pointer; /* Bash li klike 3la image ybda ydir click */
+  transition: transform 0.3s ease-in-out; /* T7irkat zwin dyal l'image lma tklik 3liha */
+}
+
+.produit-thumbnails img:hover {
+  transform: scale(1.1); /* Hna, l'image tkbar shwiya lma tkli9 3liha */
+}

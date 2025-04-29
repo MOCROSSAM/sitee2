@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ceinture Chauffante - ThermoBelt</title>
+    <link rel="stylesheet" href="css/css/style1.css">
+    <link rel="stylesheet" href="css/css/tesponsive.css">
+    <link rel="stylesheet" href="css/css/styls2.css">
+</head>
+<body>
+    <header>
+        <!-- Même header que index.html -->
+        <div class="logo">
+            <img src="assets/images/assest/logo.png" alt="Menstura" width="300">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="#features">Avantages</a></li>
+                <li><a href="panier.html">Panier (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+        </header>
+
+    <main class="produit-details">
+        <div class="produit-gallery">
+            <img src="assets/images/assest/produit1.webp" alt="Ceinture Chauffante" id="main-image" width="200">
+        </div>
+
+         <!-- Miniatures Section -->
+         <div class="produit-thumbnails">
+            <img src="assets/images/assest/fashion-3.png.jpg" alt="Produit 1" class="thumbnail" onclick="changeImage('assets/images/assest/fashion-3.png.jpg')">
+            <img src="assets/images/assest/featured-1.png.jpg" alt="Produit 2" class="thumbnail" onclick="changeImage('assets/images/assest/featured-1.png.jpg')">
+            <img src="assets/images/assest/ceinture-hero.jpg" alt="Produit 3" class="thumbnail" onclick="changeImage('assets/images/assest/ceinture-hero.jpg')">
+            <img src="assets/images/assest/produit1.webp" alt="Produit 3" class="thumbnail" onclick="changeImage('assets/images/assest/produit1.webp')">
+        </div>       
+
+
+        <div class="produit-info">
+            <h1>Ceinture Chauffante pour Femme</h1>
+            <p class="prix">49.99€</p>
+            <div class="options">
+                <label>Couleur :</label>
+                <select id="couleur">
+                    <option>Noir</option>
+                    <option>Rose</option>
+                </select>
+                <label>Taille :</label>
+                <select id="taille">
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                </select>
+            </div>
+            <button id="ajouter-panier" class="btn">Ajouter au Panier</button>
+            <div class="description">
+                <h3>Description</h3>
+                <p>Ceinture chauffante infrarouge avec 3 niveaux de température. Autonomie : 8 heures.</p>
+            </div>
+        </div>
+    </main>
+
+     <!-- Footer -->
+     <footer>
+        <p>&copy; 2024 Menstura. Tous droits réservés.</p>
+        <div class="footer-links">
+            <a href="#">CGV</a>
+            <a href="#">Contact</a>
+        </div>
+    </footer>
+
+    <script src="js/cart.js"></script>
+    <script>
+        document.getElementById("ajouter-panier").addEventListener("click", () => {
+            const produit = {
+                id: 1,
+                nom: "Ceinture Chauffante",
+                prix: 49.99,
+                couleur: document.getElementById("couleur").value,
+                taille: document.getElementById("taille").value,
+                quantite: 1
+            };
+            ajouterAuPanier(produit);
+            alert("Produit ajouté au panier !");
+        });
+    </script>
+</body>
+</html>

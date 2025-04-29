@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <!-- Lien vers les fichiers CSS -->
+    <link rel="stylesheet" href="css/css/style1.css">
+    <link rel="stylesheet" href="css/css/tesponsive.css">
+    <link rel="stylesheet" href="style3.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+    <header>
+        <!-- Même header que index.html -->
+        <div class="logo">
+            <img src="assets/images/assest/logo.png" alt="Menstura" width="300">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="#features">Avantages</a></li>
+                <li><a href="panier.html">Panier (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="panier-container">
+        <h1>Votre Panier</h1>
+        <div id="panier-items" class="panier-items"></div>
+        <div class="total-section">
+            <p>Total : <span id="panier-total">0.00€</span></p>
+            <a href="https://buy.stripe.com/test_dR64hbf6m6T486Y3cc" class="btn">Passer la commande</a>
+        </div>
+    </main>
+
+    <script src="js/cart.js"></script>
+    <script>
+        function supprimerProduit(index) {
+            let panier = JSON.parse(localStorage.getItem('panier')) || [];
+            panier.splice(index, 1); // 3ayet index w 7ayd produit
+            localStorage.setItem('panier', JSON.stringify(panier));
+            location.reload(); // Refresh page باش تبان التحديثات
+        }
+    
+        document.addEventListener('DOMContentLoaded', () => {
+            const panier = JSON.parse(localStorage.getItem('panier')) || [];
+            const container = document.getElementById('panier-items');
+            let total = 0;
+    
+            if (panier.length === 0) {
+                container.innerHTML = '<p>Votre panier est vide.</p>';
+            } else {
+                container.innerHTML = panier.map((item, index) => {
+                    total += item.prix * item.quantite;
+                    return `
+                        <div class="panier-item">
+                            <div class="item-header">
+                                <h3>${item.nom}</h3>
+                                <button class="delete-btn" onclick="supprimerProduit(${index})">🗑️</button>
+                            </div>
+                            <p>Couleur: ${item.couleur} | Taille: ${item.taille}</p>
+                            <p>Quantité: ${item.quantite}</p>
+                            <p>Prix: ${(item.prix * item.quantite).toFixed(2)}€</p>
+                        </div>
+                    `;
+                }).join('');
+            }
+    
+            document.getElementById('panier-total').textContent = total.toFixed(2) + '€';
+        });
+    </script>
+</body>
+</html>
